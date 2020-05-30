@@ -1,0 +1,45 @@
+<div class="cust-container">
+    <form nz-form [formGroup]="form$" (ngSubmit)="submit()">
+        <nz-row nzGutter="16">
+            <nz-col nzSm="24">
+                <nz-form-item>
+                    <nz-form-label nzFor="hdd">Storage</nz-form-label>
+                    <nz-form-control>
+                        <nz-slider [nzMarks]="sliderMarks" formControlName="HDD" style="width: 100%;"></nz-slider>
+                    </nz-form-control>
+                </nz-form-item>
+            </nz-col>
+            <!-- <nz-col nzSm="24">
+                <nz-form-item>
+                    <nz-form-label nzFor="RAM">RAM</nz-form-label>
+                    <nz-form-control>
+                        <nz-checkbox-group [(ngModel)]="rams" [ngModelOptions]="{ standalone: true }">
+                        </nz-checkbox-group>
+                    </nz-form-control>
+                </nz-form-item>
+            </nz-col> -->
+            <nz-col nzSm="24">
+                <nz-form-item>
+                    <nz-form-label nzFor="types">Harddisk type</nz-form-label>
+                    <nz-form-control>
+                        <nz-select formControlName="HDD_Type">
+                            <nz-option [nzValue]="type" [nzLabel]="type" *ngFor="let type of hddTypes"></nz-option>
+                        </nz-select>
+                    </nz-form-control>
+                </nz-form-item>
+            </nz-col>
+            <nz-col nzSm="24">
+                <nz-form-item>
+                    <nz-form-label nzFor="types">Location</nz-form-label>
+                    <nz-form-control>
+                        <nz-select formControlName="Location">
+                            <nz-option [nzValue]="location" [nzLabel]="location" *ngFor="let location of locations">
+                            </nz-option>
+                        </nz-select>
+                    </nz-form-control>
+                </nz-form-item>
+            </nz-col>
+        </nz-row>
+        <button nz-button type="submit" [nzType]="'primary'">Filter</button>
+    </form>
+</div>

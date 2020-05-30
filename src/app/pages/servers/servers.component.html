@@ -1,0 +1,16 @@
+<button nz-button nzType="primary" (click)="filter()">
+    <i nz-icon nzType="filter"></i>
+    Filter
+</button>
+<nz-table #basicTable [nzData]="servers" nzFrontPagination="false">
+    <thead>
+        <tr>
+            <th *ngFor="let col of columns">{{col}}</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let data of basicTable.data | async">
+            <td *ngFor="let col of columns">{{ data[col] }}</td>
+        </tr>
+    </tbody>
+</nz-table>
